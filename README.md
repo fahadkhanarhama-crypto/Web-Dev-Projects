@@ -7,6 +7,7 @@ My-Web-Projects/
 ├── Registration-Form/
 ├── Flexbox/
 └── README.md
+
 🎯 Purpose of This Repository
 
 This repository serves as a central portfolio showcasing my web development projects in one place. It demonstrates my:
@@ -28,9 +29,5 @@ Make all projects fully responsive
 Convert projects into full-stack apps
 
 Add modern UI frameworks
-
-
-
-LinkedIn: PASTE_LINK
 
 ⭐ Thank you for visiting my portfolio repository!
