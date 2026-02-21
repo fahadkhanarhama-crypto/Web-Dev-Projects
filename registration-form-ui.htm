@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:flex-start; /* changed from center */
+background:linear-gradient(135deg,#667eea,#764ba2);
+padding:40px 15px; /* allows breathing space */
+overflow-y:auto; /* enables scroll */
+}
+
+.card{
+background:#fff;
+padding:35px;
+border-radius:18px;
+width:100%;
+max-width:380px; /* responsive width */
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#333;
+}
+
+.input-group{
+margin-bottom:16px;
+}
+
+label{
+font-weight:600;
+display:block;
+margin-bottom:6px;
+color:#444;
+}
+
+input{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:15px;
+transition:.3s;
+}
+
+input:focus{
+border-color:#667eea;
+box-shadow:0 0 6px rgba(102,126,234,.4);
+outline:none;
+}
+
+.options{
+display:flex;
+gap:15px;
+flex-wrap:wrap; /* allows wrapping on small screens */
+margin-top:5px;
+}
+
+.error{
+color:red;
+font-size:13px;
+margin-top:3px;
+display:none;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#667eea;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#5a67d8;
+}
+
+.success{
+display:none;
+text-align:center;
+margin-top:15px;
+color:green;
+font-weight:600;
+}
+
+/* 📱 Mobile Responsive */
+@media(max-width:480px){
+
+.card{
+padding:25px 20px;
+}
+
+h2{
+font-size:22px;
+}
+
+input{
+font-size:14px;
+padding:9px;
+}
+
+button{
+font-size:15px;
+padding:10px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Registration Form</h2>
+
+<form id="form">
+
+<div class="input-group">
+<label>Name</label>
+<input type="text" id="name">
+<div class="error" id="nameError">Please enter your name</div>
+</div>
+
+<div class="input-group">
+<label>Phone</label>
+<input type="tel" id="phone">
+<div class="error" id="phoneError">Enter valid 10 digit number</div>
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="email">
+<div class="error" id="emailError">Enter valid email</div>
+</div>
+
+<div class="input-group">
+<label>Gender</label>
+<div class="options">
+<label><input type="radio" name="gender" value="Male"> Male</label>
+<label><input type="radio" name="gender" value="Female"> Female</label>
+</div>
+<div class="error" id="genderError">Select gender</div>
+</div>
+
+<div class="input-group">
+<label>Mother's Name</label>
+<input type="text" id="mother">
+<div class="error" id="motherError">Required</div>
+</div>
+
+<div class="input-group">
+<label>Father's Name</label>
+<input type="text" id="father">
+<div class="error" id="fatherError">Required</div>
+</div>
+
+<div class="input-group">
+<label>Subjects</label>
+<div class="options">
+<label><input type="checkbox" name="sub"> Physics</label>
+<label><input type="checkbox" name="sub"> Chemistry</label>
+<label><input type="checkbox" name="sub"> Biology</label>
+</div>
+</div>
+
+<button type="submit">Register</button>
+
+<div class="success" id="successMsg">
+✅ Registration Successful!
+</div>
+
+</form>
+</div>
+
+<script>
+
+document.getElementById("form").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let valid=true;
+
+// name
+let name=document.getElementById("name").value.trim();
+if(name===""){
+showError("nameError"); valid=false;
+}else hideError("nameError");
+
+// phone
+let phone=document.getElementById("phone").value;
+if(!/^[0-9]{10}$/.test(phone)){
+showError("phoneError"); valid=false;
+}else hideError("phoneError");
+
+// email
+let email=document.getElementById("email").value;
+if(!/^\S+@\S+\.\S+$/.test(email)){
+showError("emailError"); valid=false;
+}else hideError("emailError");
+
+// gender
+let gender=document.querySelector('input[name="gender"]:checked');
+if(!gender){
+showError("genderError"); valid=false;
+}else hideError("genderError");
+
+// mother
+let mother=document.getElementById("mother").value.trim();
+if(mother===""){
+showError("motherError"); valid=false;
+}else hideError("motherError");
+
+// father
+let father=document.getElementById("father").value.trim();
+if(father===""){
+showError("fatherError"); valid=false;
+}else hideError("fatherError");
+
+if(valid){
+document.getElementById("successMsg").style.display="block";
+document.getElementById("form").reset();
+}
+
+});
+
+function showError(id){
+document.getElementById(id).style.display="block";
+}
+
+function hideError(id){
+document.getElementById(id).style.display="none";
+}
+
+</script>
+
+</body>
+</html>

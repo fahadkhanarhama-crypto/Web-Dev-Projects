@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jharoka | Handicrafts</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+background:#E2FFF6;
+color:#222;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:#4539FF;
+color:white;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#ffd700;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+color:#4539FF;
+}
+
+.hero h2{
+font-weight:normal;
+color:#555;
+}
+
+/* SECTION */
+
+.section-title{
+text-align:center;
+margin:40px 0 20px;
+color:#4539FF;
+font-size:28px;
+}
+
+/* PRODUCTS */
+
+.products{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+background:#4539FF;
+color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:34px;
+}
+
+.nav-links{
+gap:15px;
+font-size:14px;
+}
+
+.card img{
+width:100%;
+height:auto;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">Jharoka</div>
+
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Articles</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>Jharoka</h1>
+<h2>A Premium Indian Handicraft Business</h2>
+</section>
+
+<h2 class="section-title">Our Best Sellers</h2>
+
+<section class="products">
+
+<div class="card">
+<img src="https://5.imimg.com/data5/SELLER/Default/2021/7/NK/QZ/AW/132970306/handicraft-items-1000x1000.jpg">
+</div>
+
+<div class="card">
+<img src="https://eximelite.com/wp-content/uploads/2024/01/Handicraft-1.2.jpg">
+</div>
+
+<div class="card">
+<img src="https://exclusivelane.com/cdn/shop/files/EL-005-2449_A_result_1024x.webp?v=1753439728">
+</div>
+
+</section>
+
+<footer class="footer">
+© 2026 Jharoka Handicrafts | All Rights Reserved
+</footer>
+
+</body>
+</html>
