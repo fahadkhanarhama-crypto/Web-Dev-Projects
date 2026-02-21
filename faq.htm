@@ -1,8 +1,45 @@
 <html lang="en">
 <head>
        <title>FAQ's</title>
-       <link rel="stylesheet" href="sty.css">
        <script src="https://kit.fontawesome.com/15169738aa.js" crossorigin="anonymous"></script>
+       <style>
+              body {
+    background-color: #FFC7F7;
+    padding: 40px;
+    font-family: Times New Roman;
+    line-height: 1.6rem;
+}
+.accordian {
+    background-color: white;
+    padding: 4px 16px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px black;  
+    cursor: pointer;
+}
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon {
+    margin-right: 16px;
+    transition: transform 0.3s ease;  
+}
+.icon.active {
+    transform: rotate(180deg); 
+}      
+.answer {
+    color: #666;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease; 
+}
+.answer.active {
+    max-height: 500px;   
+}
+
+       </style>
 </head>
 <body> 
 <h1>FAQs</h1>
@@ -37,4 +74,5 @@
 </div>
         <script src="script.js"></script>
 </body>
+
 </html>
